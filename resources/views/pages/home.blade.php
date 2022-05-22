@@ -8,8 +8,7 @@
                 <div class="card-header">Contacts</div>
 
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
-                        data-bs-target="#createModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
                         Add new data
                     </button>
                     @livewire('contact-index')

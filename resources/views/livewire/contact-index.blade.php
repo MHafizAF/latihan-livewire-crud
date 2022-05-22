@@ -8,6 +8,20 @@
     </div>
     @endif
 
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <select wire:model="paginate" class="form-control sm w-auto">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
+        </div>
+    </div>
+
+    <hr>
+
     <table class="table table-dark table-striped">
         <thead>
             <tr>
@@ -20,7 +34,7 @@
         <tbody>
             @foreach ($contacts as $key => $contact)
             <tr>
-                <th scope="row">{{ ++$key }}</th>
+                <th scope="row">{{ $key + $contacts->firstItem() }}</th>
                 <td>{{ $contact->name }}</td>
                 <td>{{ $contact->phone }}</td>
                 <td>
