@@ -9,7 +9,8 @@ use Livewire\WithPagination;
 
 class ContactIndex extends Component
 {
-    public $contacts;
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
     protected $listeners = [
         'contactStored' => 'handleStored',
@@ -18,8 +19,11 @@ class ContactIndex extends Component
 
     public function render()
     {
-        $this->contacts = Contact::latest()->get();
-        return view('livewire.contact-index');
+        $contacts = Contact::latest()->paginate(5);
+
+        return view('livewire.contact-index', [
+            'contacts' => $contacts
+        ]);
     }
 
     public function getContact($id)
