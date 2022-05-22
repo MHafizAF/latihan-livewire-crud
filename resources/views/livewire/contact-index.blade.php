@@ -28,7 +28,7 @@
                         data-bs-toggle="modal" data-bs-target="#updateModal">
                         Edit
                     </button>
-                    <button class="btn btn-sm btn-danger">Delete</button>
+                    <button wire:click="destroy({{ $contact->id }})" class="btn btn-sm btn-danger">Delete</button>
                 </td>
             </tr>
             @endforeach

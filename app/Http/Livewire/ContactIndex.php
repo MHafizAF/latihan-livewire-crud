@@ -3,7 +3,9 @@
 namespace App\Http\Livewire;
 
 use App\Models\Contact;
+
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ContactIndex extends Component
 {
@@ -26,9 +28,18 @@ class ContactIndex extends Component
         $this->emit('getContact', $contact);
     }
 
+    public function destroy($id)
+    {
+        if ($id) {
+            Contact::destroy($id);
+            session()->flash('message', 'Contact has been deleted !');
+        }
+    }
+
     public function handleStored($contact)
     {
-        $this->emit('userStored'); // close the model using jquery
+        // close the model using jquery
+        $this->emit('userStored');
         session()->flash('message', 'Contact ' . $contact['name'] . ' has been stored !');
     }
 
