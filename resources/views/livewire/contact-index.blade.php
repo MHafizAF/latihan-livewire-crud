@@ -18,6 +18,9 @@
                 <option value="15">15</option>
             </select>
         </div>
+        <div class="col">
+            <input wire:model="search" type="text" class="form-control" placeholder="Search">
+        </div>
     </div>
 
     <hr>
