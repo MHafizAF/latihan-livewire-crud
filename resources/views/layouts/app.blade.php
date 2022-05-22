@@ -42,8 +42,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript">
         window.livewire.on('userStored', () => {
-                $('#createModal').modal('hide');
-            });
+            $('#createModal').modal('hide');
+        });
+        
+        window.livewire.on('userUpdated', () => {
+            $('#updateModal').modal('hide');
+        });
     </script>
 </body>
 

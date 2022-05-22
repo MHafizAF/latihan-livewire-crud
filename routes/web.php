@@ -17,5 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home');
 })->name('index');
-
-Route::resource('/contacts', ContactsController::class);

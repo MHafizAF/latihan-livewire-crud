@@ -1,5 +1,6 @@
 <div>
     @livewire('contact-create')
+    @livewire('contact-update')
 
     @if (session()->has('message'))
     <div class="alert alert-success">
@@ -23,7 +24,10 @@
                 <td>{{ $contact->name }}</td>
                 <td>{{ $contact->phone }}</td>
                 <td>
-                    <button class="btn btn-sm btn-info">Edit</button>
+                    <button wire:click="getContact({{ $contact->id }})" type="button" class="btn btn-sm btn-info"
+                        data-bs-toggle="modal" data-bs-target="#updateModal">
+                        Edit
+                    </button>
                     <button class="btn btn-sm btn-danger">Delete</button>
                 </td>
             </tr>
