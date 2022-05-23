@@ -17,17 +17,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('index') }}">LiveWire</a>
+            <a class="navbar-brand" href="{{ route('contact') }}">LiveWire</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            {{-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link {{ request()->is('contacts') ? 'active' : '' }}"
-                        href="{{ route('contacts.index') }}">Contacts</a>
-                </div>
-            </div> --}}
+            <div class="navbar-nav">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <input type="submit" value="Log Out"
+                        class="dropdown-item text-center text-danger text-bold fw-bold">
+                </form>
+            </div>
         </div>
     </nav>
     <main>

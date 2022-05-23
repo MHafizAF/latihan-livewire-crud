@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/contact', function () {
     return view('pages.home');
-})->name('index');
+})->middleware(['auth'])->name('contact');
+
+require __DIR__ . '/auth.php';
